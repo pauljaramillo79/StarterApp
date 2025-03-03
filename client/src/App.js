@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     async function fetchdata() {
       // const response = await axios.get("/");
-      const response = await axios.get("https://www.wgsitetest.com/");
+      const response = await axios.get("https://wgsitetest.com/");
       setData(response.data);
     }
     fetchdata();
