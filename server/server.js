@@ -7,7 +7,7 @@ const app = express();
 const http = require("http").createServer(app);
 const credentials = require("./middleware/credentials");
 
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 // app.use(
 //   cors({
@@ -28,8 +28,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // built-in middleware to handle urlencoded form data
-app.use(express.urlencoded({ extended: true }));
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from React in production
 if (process.env.NODE_ENV === "production") {
